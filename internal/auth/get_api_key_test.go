@@ -17,7 +17,7 @@ func TestApiKeyNotPassedInAuthorizationHeader(t *testing.T) {
 		"Authorization": []string{"abc"},
 	}
 
-	if _, err := GetAPIKey(header); err != nil {
+	if _, err := GetAPIKey(header); err == nil {
 		t.Errorf("expected %v error, got no error", err)
 	}
 }
